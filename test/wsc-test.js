@@ -40,19 +40,19 @@ var collapsed = false;
 
 //Add animation funcionality here
 function expand() {
-  $("#WikiaRail").animate({ height: orig_height }, 600);
-  $("#WikiaArticle").animate({ width: orig_width }, 600);
+  $("#WikiaRail").animate({ height: orig_height }, 400);
+  $("#WikiaArticle").animate({ width: orig_width }, 400);
   setTimeout( function(){
     $("#WikiaRail").css("overflow", "visible");
-  },600);
+  },400);
   collapsed = false;
 }
 
 function collapse() {
 
   $("#WikiaRail").css("overflow", "hidden");
-  $("#WikiaRail").animate({ height: new_height }, 600);
-  $("#WikiaArticle").animate({ width: new_width }, 600);
+  $("#WikiaRail").animate({ height: new_height }, 400);
+  $("#WikiaArticle").animate({ width: new_width }, 400);
   collapsed = true;
 }
 
