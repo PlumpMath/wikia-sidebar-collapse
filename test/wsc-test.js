@@ -32,6 +32,8 @@ if (sidebar_exists) {
     top : '-37px',
     height : '25px',
     width : '30px',
+    'font-size' : '20px',
+    'text-align' : 'center',
     'background-color' : button_background_color,
     'border-left' : '1px solid' + button_border_color
   });
