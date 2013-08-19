@@ -46,7 +46,7 @@ if (sidebar_exists) {
   $set.slice(2,$set.length).wrapAll('<div id="collapsing-tags"/>');
   $("#collapsing-tags").css("position", "relative")
   
-  if ($.cookie('collapsible-cookie')=='true') {
+  if ($.cookie('collapsed-cookie')=='true') {
     collapse();
   }
 }
@@ -60,7 +60,7 @@ function expand() {
   setTimeout( function(){
     $("#WikiaRail").css("overflow", "visible");
   },400);
-  $.cookie('collapsible-cookie', 'false');
+  $.cookie('collapsed-cookie', 'false');
 }
 
 function collapse() {
@@ -69,7 +69,7 @@ function collapse() {
   $("#WikiaRail").css("overflow", "hidden");
   $("#collapsing-tags").css("left", "0px").animate({ left: new_left }, 400);
   $("#WikiaArticle").animate({ width: new_width }, 400);
-  $.cookie('collapsible-cookie', 'true');
+  $.cookie('collapsed-cookie', 'true');
 }
 
 $("#WikiaSidebarCollapseButton").click(function () {
