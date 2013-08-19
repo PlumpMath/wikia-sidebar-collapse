@@ -32,6 +32,7 @@ if (sidebar_exists) {
     top : '-37px',
     height : '25px',
     width : '30px',
+    cursor : 'default',
     'font-size' : '20px',
     'text-align' : 'center',
     'background-color' : button_background_color,
