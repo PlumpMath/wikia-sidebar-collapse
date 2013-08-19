@@ -18,6 +18,7 @@ var new_height = "30px";
 var orig_width = parseInt($("#WikiaArticle").width(), 10).toString() + "px";
 var new_width = parseInt($("#WikiHeader").width(), 10).toString() + "px";
 
+//change look of button here
 if (sidebar_exists) {
   $("#WikiaSearch").after('<div id="WikiaSidebarCollapseButton"><div  id="WikiaSidebarCollapseButtonChild"></div></div>');
   $("#WikiaSidebarCollapseButton").css({
@@ -37,6 +38,7 @@ if (sidebar_exists) {
 
 var collapsed = false;
 
+//Add animation funcionality here
 function expand() {
   $("#WikiaRail").css("height", orig_height).css("overflow", "visible");
   $("#WikiaArticle").css("width", orig_width);
@@ -44,7 +46,9 @@ function expand() {
 }
 
 function collapse() {
-  $("#WikiaRail").css("height", new_height).css("overflow", "hidden");
+
+  $("#WikiaRail").css("overflow", "hidden");
+  $("#WikiaRail").animate({ height: new_height }, 600);
   $("#WikiaArticle").css("width", new_width);
   collapsed = true;
 }
