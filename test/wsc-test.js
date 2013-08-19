@@ -52,9 +52,7 @@ function collapse() {
 
   //$("#WikiaRail").css("overflow", "hidden");
   var $set = $("#WikiaRail").children();    
-  for(var i=2, len = $set.length; i < len; i+=1){
-    $set.slice(i).wrapAll('<div class="test"/>');
-  }
+    $set.slice(2,$set.length).wrapAll('<div class="test"/>');
   //$("#WikiaRail").animate({ height: new_height }, 400);
   $("#WikiaArticle").animate({ width: new_width }, 400);
   collapsed = true;
