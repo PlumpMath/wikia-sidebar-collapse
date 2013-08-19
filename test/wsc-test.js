@@ -47,8 +47,6 @@ if($.cookie('collapsed-cookie') === null) {
     $.cookie('collapsed-cookie', 'false', {expires:7});
 }
 
-$.cookie('collapsible-cookie');
-
 //Add animation funcionality here
 function expand() {
         
@@ -71,7 +69,7 @@ function collapse() {
 }
 
 $("#WikiaSidebarCollapseButton").click(function () {
-  if ($.cookie('collapsible-cookie')==='true') {
+  if ($.cookie('collapsible-cookie')=='true') {
     expand();
   } else {
     collapse();
