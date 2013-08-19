@@ -1,7 +1,7 @@
 /* Any JavaScript here will be loaded for all users on every page load. */
 
 
-function init-wsc() {
+function initwsc() {
   alert("Hello World!");
 }
 jQuery.fn.doesExist = function(){
