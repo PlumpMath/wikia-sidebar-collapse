@@ -73,3 +73,5 @@ $("#WikiaSidebarCollapseButton").click(function () {
     collapse();
   }
 });
+
+  alert("Hello World!");
