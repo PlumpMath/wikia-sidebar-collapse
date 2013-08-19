@@ -42,7 +42,9 @@ var collapsed = false;
 function expand() {
   $("#WikiaRail").animate({ height: orig_height }, 600);
   $("#WikiaArticle").animate({ width: orig_width }, 600);
-  $("#WikiaRail").delay(600).css("overflow", "visible");
+  setTimeout( function(){
+    $("#WikiaRail").css("overflow", "visible");
+  },600);
   collapsed = false;
 }
 
