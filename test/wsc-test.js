@@ -35,13 +35,16 @@ if (sidebar_exists) {
     'background-color' : button_background_color,
     'border-left' : '1px solid' + button_border_color
   });
+  var $set = $("#WikiaRail").children();    
+  $set.slice(2,$set.length).wrapAll('<div id="collapsing-tags"/>');
+  $("#collapsing-tags").css("position", "relative")
 }
 
 var collapsed = false;
 
 //Add animation funcionality here
 function expand() {
-  $("#WikiaRail").animate({ height: orig_height }, 400);
+  $("#collapsing-tags").css("left", new_left).animate({ left: "0px" }, 400);
   $("#WikiaArticle").animate({ width: orig_width }, 400);
   setTimeout( function(){
     $("#WikiaRail").css("overflow", "visible");
@@ -52,9 +55,7 @@ function expand() {
 function collapse() {
 
   $("#WikiaRail").css("overflow", "hidden");
-  var $set = $("#WikiaRail").children();    
-  $set.slice(2,$set.length).wrapAll('<div id="collapsing-tags"/>');
-  $("#collapsing-tags").css("position", "relative").css("left", "0").animate({ left: new_left }, 400);
+  $("#collapsing-tags").css("left", "0px").animate({ left: new_left }, 400);
   $("#WikiaArticle").animate({ width: new_width }, 400);
   collapsed = true;
 }
