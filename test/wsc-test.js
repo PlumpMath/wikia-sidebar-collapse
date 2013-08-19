@@ -49,7 +49,7 @@ function collapse() {
 
   $("#WikiaRail").css("overflow", "hidden");
   $("#WikiaRail").animate({ height: new_height }, 600);
-  $("#WikiaArticle").css("width", new_width);
+  $("#WikiaArticle").animate({ width: new_width }, 600);
   collapsed = true;
 }
 
