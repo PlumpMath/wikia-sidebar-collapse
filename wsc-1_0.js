@@ -2,6 +2,8 @@
 
 
 function init-wsc() {
+  alert("Hello World!");
+}
 jQuery.fn.doesExist = function(){
         return jQuery(this).length > 0;
 };
@@ -71,4 +73,3 @@ $("#WikiaSidebarCollapseButton").click(function () {
     collapse();
   }
 });
-}
