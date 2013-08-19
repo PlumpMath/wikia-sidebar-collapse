@@ -1,5 +1,7 @@
 /* Any JavaScript here will be loaded for all users on every page load. */
 
+
+function init-wsc() {
 jQuery.fn.doesExist = function(){
         return jQuery(this).length > 0;
 };
@@ -69,3 +71,4 @@ $("#WikiaSidebarCollapseButton").click(function () {
     collapse();
   }
 });
+}
