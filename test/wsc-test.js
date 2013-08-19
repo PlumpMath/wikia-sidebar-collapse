@@ -14,6 +14,7 @@ $("#WikiaPageHeader").css("border-bottom", "0").css("margin-bottom", "0");
 var sidebar_exists = $("#WikiaRail").doesExist();
 
 var orig_height = parseInt($("#WikiaRail").height(), 10).toString() + "px";
+var new_left = parseInt($("#WikiaRail").width(), 10).toString() + "px";
 var new_height = "30px";
 var orig_width = parseInt($("#WikiaArticle").width(), 10).toString() + "px";
 var new_width = parseInt($("#WikiHeader").width(), 10).toString() + "px";
@@ -50,10 +51,10 @@ function expand() {
 
 function collapse() {
 
-  //$("#WikiaRail").css("overflow", "hidden");
+  $("#WikiaRail").css("overflow", "hidden");
   var $set = $("#WikiaRail").children();    
-    $set.slice(2,$set.length).wrapAll('<div class="test"/>');
-  //$("#WikiaRail").animate({ height: new_height }, 400);
+  $set.slice(2,$set.length).wrapAll('<div id="collapsing-tags"/>');
+  $("#collapsing-tags").css("position", "relative").css("left", "0").animate({ left: new_left }, 400);
   $("#WikiaArticle").animate({ width: new_width }, 400);
   collapsed = true;
 }
