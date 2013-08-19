@@ -19,6 +19,10 @@ var new_height = "30px";
 var orig_width = parseInt($("#WikiaArticle").width(), 10).toString() + "px";
 var new_width = parseInt($("#WikiHeader").width(), 10).toString() + "px";
 
+
+if($.cookie('collapsed-cookie') === null) { 
+    $.cookie('collapsed-cookie', 'false', {expires:7});
+}
 //change look of button here
 if (sidebar_exists) {
   $("#WikiaSearch").after('<div id="WikiaSidebarCollapseButton"><div  id="WikiaSidebarCollapseButtonChild">&gt;&gt;</div></div>');
@@ -41,10 +45,12 @@ if (sidebar_exists) {
   var $set = $("#WikiaRail").children();    
   $set.slice(2,$set.length).wrapAll('<div id="collapsing-tags"/>');
   $("#collapsing-tags").css("position", "relative")
-}
-
-if($.cookie('collapsed-cookie') === null) { 
-    $.cookie('collapsed-cookie', 'false', {expires:7});
+  
+  if ($.cookie('collapsible-cookie')=='false') {
+    expand();
+  } else {
+    collapse();
+  }
 }
 
 //Add animation funcionality here
@@ -69,7 +75,7 @@ function collapse() {
 }
 
 $("#WikiaSidebarCollapseButton").click(function () {
-  if ($.cookie('collapsible-cookie')=='true') {
+  if ($.cookie('collapsible-cookie')=='false') {
     expand();
   } else {
     collapse();
