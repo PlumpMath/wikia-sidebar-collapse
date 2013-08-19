@@ -46,9 +46,7 @@ if (sidebar_exists) {
   $set.slice(2,$set.length).wrapAll('<div id="collapsing-tags"/>');
   $("#collapsing-tags").css("position", "relative")
   
-  if ($.cookie('collapsible-cookie')=='false') {
-    expand();
-  } else {
+  if ($.cookie('collapsible-cookie')=='true') {
     collapse();
   }
 }
@@ -75,7 +73,7 @@ function collapse() {
 }
 
 $("#WikiaSidebarCollapseButton").click(function () {
-  if ($.cookie('collapsible-cookie')=='false') {
+  if ($.cookie('collapsed-cookie')=='true') {
     expand();
   } else {
     collapse();
