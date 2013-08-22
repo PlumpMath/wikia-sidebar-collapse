@@ -46,8 +46,8 @@ if (sidebar_exists) {
     'border-left' : '1px solid' + button_border_color
   });
   var $set = $("#WikiaRail").children();    
-  $set.slice(2,$set.length).wrapAll('<div id="collapsing-tags"/>');
-  $("#collapsing-tags").css("position", "relative")
+  $set.not("#WikiaSearch").not("#WikiaSidebarCollapseButton").wrapAll('<div id="collapsing-tags"/>');
+  $("#collapsing-tags").css("position", "relative");
   
   if ($.cookie('collapsed-cookie')=='true') {
     collapse();
